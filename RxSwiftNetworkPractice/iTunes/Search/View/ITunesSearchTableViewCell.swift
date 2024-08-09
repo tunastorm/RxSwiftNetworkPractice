@@ -18,6 +18,8 @@ final class ITunesSearchTableViewCell: UITableViewCell {
         imageView.clipsToBounds = true
         imageView.backgroundColor = .systemGray
         imageView.layer.cornerRadius = 8
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor.systemGray4.cgColor
         return imageView
     }()
     
