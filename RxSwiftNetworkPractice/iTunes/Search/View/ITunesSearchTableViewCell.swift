@@ -145,4 +145,6 @@ final class ITunesSearchTableViewCell: UITableViewCell {
         genreLabel.text = data.genres.first
     }
     
+    
+    
 }

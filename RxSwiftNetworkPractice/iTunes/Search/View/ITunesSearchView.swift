@@ -13,8 +13,6 @@ import Then
 
 final class ITunesSearchView: UIView {
     
-    var delegate: ITunesSearchViewDelegate?
-    
     let searchBar = UISearchBar()
     
     let tableView = {

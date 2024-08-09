@@ -40,6 +40,9 @@
 		BC8F1C542C6617F4005D63CB /* ITunesSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C532C6617F4005D63CB /* ITunesSearchView.swift */; };
 		BC8F1C562C663969005D63CB /* ITunesSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C552C663969005D63CB /* ITunesSearchTableViewCell.swift */; };
 		BC8F1C5B2C6645C4005D63CB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BC8F1C5A2C6645C4005D63CB /* Kingfisher */; };
+		BC8F1C5E2C664E80005D63CB /* ITunesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C5D2C664E80005D63CB /* ITunesDetailViewController.swift */; };
+		BC8F1C612C665036005D63CB /* ITunesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C602C665036005D63CB /* ITunesDetailView.swift */; };
+		BC8F1C632C6653A4005D63CB /* ITunesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C622C6653A4005D63CB /* ITunesDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		BC8F1C512C6612D4005D63CB /* ITunesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchViewModel.swift; sourceTree = "<group>"; };
 		BC8F1C532C6617F4005D63CB /* ITunesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchView.swift; sourceTree = "<group>"; };
 		BC8F1C552C663969005D63CB /* ITunesSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchTableViewCell.swift; sourceTree = "<group>"; };
+		BC8F1C5D2C664E80005D63CB /* ITunesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesDetailViewController.swift; sourceTree = "<group>"; };
+		BC8F1C602C665036005D63CB /* ITunesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesDetailView.swift; sourceTree = "<group>"; };
+		BC8F1C622C6653A4005D63CB /* ITunesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +229,6 @@
 				BC8F1C532C6617F4005D63CB /* ITunesSearchView.swift */,
 				BC8F1C4D2C65FC5F005D63CB /* iTunesSearchViewController.swift */,
 				BC8F1C552C663969005D63CB /* ITunesSearchTableViewCell.swift */,
-				BC8F1C352C65F148005D63CB /* ViewModel */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			children = (
 				BC8F1C372C65F16F005D63CB /* Model */,
 				BC8F1C362C65F160005D63CB /* View */,
+				BC8F1C352C65F148005D63CB /* ViewModel */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 		BC8F1C3A2C65F1B8005D63CB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BC8F1C622C6653A4005D63CB /* ITunesDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -265,6 +272,8 @@
 		BC8F1C3B2C65F1BD005D63CB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC8F1C5D2C664E80005D63CB /* ITunesDetailViewController.swift */,
+				BC8F1C602C665036005D63CB /* ITunesDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,14 +394,17 @@
 				BC8F1C482C65F3F3005D63CB /* APIKey.swift in Sources */,
 				BC8F1C462C65F3D3005D63CB /* ITunesSearchQuery.swift in Sources */,
 				BC8F1C102C65DD29005D63CB /* BoxOfficeViewController.swift in Sources */,
+				BC8F1C632C6653A4005D63CB /* ITunesDetailViewModel.swift in Sources */,
 				BC8F1C272C65DF15005D63CB /* BoxOfficeViewModel.swift in Sources */,
 				BC8F1C2A2C65DF37005D63CB /* BaseViewModel.swift in Sources */,
 				BC8F1C122C65DD45005D63CB /* NetworkManager.swift in Sources */,
 				BC8F1C2F2C65E0B3005D63CB /* ReusableIdentifier.swift in Sources */,
+				BC8F1C612C665036005D63CB /* ITunesDetailView.swift in Sources */,
 				BC8F1C402C65F24D005D63CB /* APIClient.swift in Sources */,
 				BC8F1C2C2C65E001005D63CB /* MovieCollectionViewCell.swift in Sources */,
 				BC8F1BF62C65DB9F005D63CB /* SceneDelegate.swift in Sources */,
 				BC8F1C152C65DD69005D63CB /* APIError.swift in Sources */,
+				BC8F1C5E2C664E80005D63CB /* ITunesDetailViewController.swift in Sources */,
 				BC8F1C562C663969005D63CB /* ITunesSearchTableViewCell.swift in Sources */,
 				BC8F1C4E2C65FC5F005D63CB /* iTunesSearchViewController.swift in Sources */,
 				BC8F1C4C2C65F5BC005D63CB /* TargetType.swift in Sources */,

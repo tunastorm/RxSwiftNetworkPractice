@@ -41,7 +41,7 @@ final class ITunesSearchViewModel: BaseViewModel {
                 print("disposed")
             }
             .disposed(by: disposeBag)
-        
+    
         return Output(searchResults: searchResults)
     }
     

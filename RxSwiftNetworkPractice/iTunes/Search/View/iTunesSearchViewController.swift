@@ -9,10 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol ITunesSearchViewDelegate {
-    func callSearchAPI(keyword: String)
-}
-
 final class iTunesSearchViewController: UIViewController {
     
     private let rootView = ITunesSearchView()
@@ -28,7 +24,6 @@ final class iTunesSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        rootView.delegate = self
         navigationItem.titleView = rootView.searchBar
         bind()
     }
@@ -36,6 +31,7 @@ final class iTunesSearchViewController: UIViewController {
     private func bind() {
         
         let input = ITunesSearchViewModel.Input(searchButtonClicked: rootView.searchBar.rx.searchButtonClicked, searchKeyword: rootView.searchBar.rx.text.orEmpty)
+        
         let output = viewModel.transform(input: input)
         
         output.searchResults
@@ -45,15 +41,13 @@ final class iTunesSearchViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        rootView.tableView.rx.modelSelected(SoftwareResult.self)
+            .bind(with: self) { owner, data in
+                let vc = ITunesDetailViewController()
+                vc.viewModel.data = data
+                owner.navigationController?.pushViewController(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
-    
-}
-
-extension iTunesSearchViewController: ITunesSearchViewDelegate {
-    
-    func callSearchAPI(keyword: String) {
-    
-    }
-    
     
 }
