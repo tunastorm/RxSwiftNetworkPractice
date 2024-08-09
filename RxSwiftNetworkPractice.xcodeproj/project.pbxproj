@@ -27,6 +27,19 @@
 		BC8F1C2F2C65E0B3005D63CB /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C2E2C65E0B3005D63CB /* ReusableIdentifier.swift */; };
 		BC8F1C312C65E0D6005D63CB /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C302C65E0D6005D63CB /* MovieTableViewCell.swift */; };
 		BC8F1C342C65E733005D63CB /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = BC8F1C332C65E733005D63CB /* Toast */; };
+		BC8F1C3E2C65F1E0005D63CB /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C3D2C65F1E0005D63CB /* APIRouter.swift */; };
+		BC8F1C402C65F24D005D63CB /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C3F2C65F24D005D63CB /* APIClient.swift */; };
+		BC8F1C432C65F2FB005D63CB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BC8F1C422C65F2FB005D63CB /* Alamofire */; };
+		BC8F1C462C65F3D3005D63CB /* ITunesSearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C452C65F3D3005D63CB /* ITunesSearchQuery.swift */; };
+		BC8F1C482C65F3F3005D63CB /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C472C65F3F3005D63CB /* APIKey.swift */; };
+		BC8F1C4A2C65F417005D63CB /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C492C65F417005D63CB /* APIConstant.swift */; };
+		BC8F1C4C2C65F5BC005D63CB /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C4B2C65F5BC005D63CB /* TargetType.swift */; };
+		BC8F1C4E2C65FC5F005D63CB /* iTunesSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C4D2C65FC5F005D63CB /* iTunesSearchViewController.swift */; };
+		BC8F1C502C65FCA9005D63CB /* ITunesSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C4F2C65FCA9005D63CB /* ITunesSearchModel.swift */; };
+		BC8F1C522C6612D5005D63CB /* ITunesSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C512C6612D4005D63CB /* ITunesSearchViewModel.swift */; };
+		BC8F1C542C6617F4005D63CB /* ITunesSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C532C6617F4005D63CB /* ITunesSearchView.swift */; };
+		BC8F1C562C663969005D63CB /* ITunesSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8F1C552C663969005D63CB /* ITunesSearchTableViewCell.swift */; };
+		BC8F1C5B2C6645C4005D63CB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BC8F1C5A2C6645C4005D63CB /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +59,17 @@
 		BC8F1C2B2C65E001005D63CB /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC8F1C2E2C65E0B3005D63CB /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
 		BC8F1C302C65E0D6005D63CB /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		BC8F1C3D2C65F1E0005D63CB /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		BC8F1C3F2C65F24D005D63CB /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BC8F1C452C65F3D3005D63CB /* ITunesSearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchQuery.swift; sourceTree = "<group>"; };
+		BC8F1C472C65F3F3005D63CB /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		BC8F1C492C65F417005D63CB /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
+		BC8F1C4B2C65F5BC005D63CB /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		BC8F1C4D2C65FC5F005D63CB /* iTunesSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchViewController.swift; sourceTree = "<group>"; };
+		BC8F1C4F2C65FCA9005D63CB /* ITunesSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchModel.swift; sourceTree = "<group>"; };
+		BC8F1C512C6612D4005D63CB /* ITunesSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchViewModel.swift; sourceTree = "<group>"; };
+		BC8F1C532C6617F4005D63CB /* ITunesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchView.swift; sourceTree = "<group>"; };
+		BC8F1C552C663969005D63CB /* ITunesSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +78,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC8F1C342C65E733005D63CB /* Toast in Frameworks */,
+				BC8F1C432C65F2FB005D63CB /* Alamofire in Frameworks */,
 				BC8F1C1E2C65DDBC005D63CB /* RxCocoa in Frameworks */,
 				BC8F1C182C65DDA3005D63CB /* IQKeyboardManagerSwift in Frameworks */,
+				BC8F1C5B2C6645C4005D63CB /* Kingfisher in Frameworks */,
 				BC8F1C202C65DDBC005D63CB /* RxSwift in Frameworks */,
 				BC8F1C1B2C65DDA9005D63CB /* Then in Frameworks */,
 				BC8F1C232C65DDC6005D63CB /* SnapKit in Frameworks */,
@@ -100,6 +126,7 @@
 		BC8F1C072C65DC7C005D63CB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BC8F1C282C65DF2D005D63CB /* Base */,
 				BC8F1C2D2C65E098005D63CB /* Protocol */,
 				BC8F1C132C65DD53005D63CB /* Network */,
 			);
@@ -109,7 +136,6 @@
 		BC8F1C082C65DC80005D63CB /* BoxOffice */ = {
 			isa = PBXGroup;
 			children = (
-				BC8F1C282C65DF2D005D63CB /* Base */,
 				BC8F1C0A2C65DCE4005D63CB /* Model */,
 				BC8F1C0B2C65DCE8005D63CB /* View */,
 				BC8F1C0C2C65DCED005D63CB /* ViewModel */,
@@ -120,6 +146,8 @@
 		BC8F1C092C65DCAD005D63CB /* iTunes */ = {
 			isa = PBXGroup;
 			children = (
+				BC8F1C382C65F178005D63CB /* Search */,
+				BC8F1C392C65F1B1005D63CB /* Detail */,
 			);
 			path = iTunes;
 			sourceTree = "<group>";
@@ -153,8 +181,14 @@
 		BC8F1C132C65DD53005D63CB /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				BC8F1C112C65DD45005D63CB /* NetworkManager.swift */,
+				BC8F1C442C65F34A005D63CB /* RequestQuery */,
+				BC8F1C3F2C65F24D005D63CB /* APIClient.swift */,
+				BC8F1C3D2C65F1E0005D63CB /* APIRouter.swift */,
 				BC8F1C142C65DD69005D63CB /* APIError.swift */,
+				BC8F1C112C65DD45005D63CB /* NetworkManager.swift */,
+				BC8F1C472C65F3F3005D63CB /* APIKey.swift */,
+				BC8F1C492C65F417005D63CB /* APIConstant.swift */,
+				BC8F1C4B2C65F5BC005D63CB /* TargetType.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -173,6 +207,81 @@
 				BC8F1C2E2C65E0B3005D63CB /* ReusableIdentifier.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BC8F1C352C65F148005D63CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC8F1C512C6612D4005D63CB /* ITunesSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BC8F1C362C65F160005D63CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC8F1C532C6617F4005D63CB /* ITunesSearchView.swift */,
+				BC8F1C4D2C65FC5F005D63CB /* iTunesSearchViewController.swift */,
+				BC8F1C552C663969005D63CB /* ITunesSearchTableViewCell.swift */,
+				BC8F1C352C65F148005D63CB /* ViewModel */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC8F1C372C65F16F005D63CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC8F1C4F2C65FCA9005D63CB /* ITunesSearchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC8F1C382C65F178005D63CB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BC8F1C372C65F16F005D63CB /* Model */,
+				BC8F1C362C65F160005D63CB /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BC8F1C392C65F1B1005D63CB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BC8F1C3C2C65F1C1005D63CB /* Model */,
+				BC8F1C3B2C65F1BD005D63CB /* View */,
+				BC8F1C3A2C65F1B8005D63CB /* ViewModel */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		BC8F1C3A2C65F1B8005D63CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BC8F1C3B2C65F1BD005D63CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC8F1C3C2C65F1C1005D63CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC8F1C442C65F34A005D63CB /* RequestQuery */ = {
+			isa = PBXGroup;
+			children = (
+				BC8F1C452C65F3D3005D63CB /* ITunesSearchQuery.swift */,
+			);
+			path = RequestQuery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +307,8 @@
 				BC8F1C1F2C65DDBC005D63CB /* RxSwift */,
 				BC8F1C222C65DDC6005D63CB /* SnapKit */,
 				BC8F1C332C65E733005D63CB /* Toast */,
+				BC8F1C422C65F2FB005D63CB /* Alamofire */,
+				BC8F1C5A2C6645C4005D63CB /* Kingfisher */,
 			);
 			productName = RxSwiftNetworkPractice;
 			productReference = BC8F1BF02C65DB9F005D63CB /* RxSwiftNetworkPractice.app */;
@@ -233,6 +344,8 @@
 				BC8F1C1C2C65DDBC005D63CB /* XCRemoteSwiftPackageReference "RxSwift" */,
 				BC8F1C212C65DDC6005D63CB /* XCRemoteSwiftPackageReference "SnapKit" */,
 				BC8F1C322C65E733005D63CB /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				BC8F1C412C65F2FB005D63CB /* XCRemoteSwiftPackageReference "Alamofire" */,
+				BC8F1C592C6645C4005D63CB /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = BC8F1BF12C65DB9F005D63CB /* Products */;
 			projectDirPath = "";
@@ -262,16 +375,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC8F1BF42C65DB9F005D63CB /* AppDelegate.swift in Sources */,
+				BC8F1C3E2C65F1E0005D63CB /* APIRouter.swift in Sources */,
+				BC8F1C542C6617F4005D63CB /* ITunesSearchView.swift in Sources */,
 				BC8F1C312C65E0D6005D63CB /* MovieTableViewCell.swift in Sources */,
 				BC8F1C0E2C65DD0B005D63CB /* Movie.swift in Sources */,
+				BC8F1C522C6612D5005D63CB /* ITunesSearchViewModel.swift in Sources */,
+				BC8F1C4A2C65F417005D63CB /* APIConstant.swift in Sources */,
+				BC8F1C502C65FCA9005D63CB /* ITunesSearchModel.swift in Sources */,
+				BC8F1C482C65F3F3005D63CB /* APIKey.swift in Sources */,
+				BC8F1C462C65F3D3005D63CB /* ITunesSearchQuery.swift in Sources */,
 				BC8F1C102C65DD29005D63CB /* BoxOfficeViewController.swift in Sources */,
 				BC8F1C272C65DF15005D63CB /* BoxOfficeViewModel.swift in Sources */,
 				BC8F1C2A2C65DF37005D63CB /* BaseViewModel.swift in Sources */,
 				BC8F1C122C65DD45005D63CB /* NetworkManager.swift in Sources */,
 				BC8F1C2F2C65E0B3005D63CB /* ReusableIdentifier.swift in Sources */,
+				BC8F1C402C65F24D005D63CB /* APIClient.swift in Sources */,
 				BC8F1C2C2C65E001005D63CB /* MovieCollectionViewCell.swift in Sources */,
 				BC8F1BF62C65DB9F005D63CB /* SceneDelegate.swift in Sources */,
 				BC8F1C152C65DD69005D63CB /* APIError.swift in Sources */,
+				BC8F1C562C663969005D63CB /* ITunesSearchTableViewCell.swift in Sources */,
+				BC8F1C4E2C65FC5F005D63CB /* iTunesSearchViewController.swift in Sources */,
+				BC8F1C4C2C65F5BC005D63CB /* TargetType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +660,22 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		BC8F1C412C65F2FB005D63CB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		BC8F1C592C6645C4005D63CB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -568,6 +708,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BC8F1C322C65E733005D63CB /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		BC8F1C422C65F2FB005D63CB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC8F1C412C65F2FB005D63CB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		BC8F1C5A2C6645C4005D63CB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC8F1C592C6645C4005D63CB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

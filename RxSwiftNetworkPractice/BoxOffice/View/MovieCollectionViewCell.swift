@@ -11,7 +11,7 @@ import Then
 
 final class MovieCollectionViewCell: UICollectionViewCell {
     
-    private var label = UILabel().then {     
+    private var label = UILabel().then {
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 13)
     }
