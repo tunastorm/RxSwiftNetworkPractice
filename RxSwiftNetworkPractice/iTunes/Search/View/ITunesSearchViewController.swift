@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class iTunesSearchViewController: UIViewController {
+final class ITunesSearchViewController: UIViewController {
     
     private let rootView = ITunesSearchView()
     
@@ -33,8 +33,21 @@ final class iTunesSearchViewController: UIViewController {
         let input = ITunesSearchViewModel.Input(searchButtonClicked: rootView.searchBar.rx.searchButtonClicked, searchKeyword: rootView.searchBar.rx.text.orEmpty)
         
         let output = viewModel.transform(input: input)
-        
+    
         output.searchResults
+            .map { [weak self] results in
+                switch results {
+                case .success(let appList): 
+                    if appList.count == 0 {
+                        self?.rootView.makeToast(APIError.noResultError.message, duration: 3.0, position: .bottom, title: APIError.noResultError.title)
+                    }
+                    return appList
+                case .failure(let error):
+                    self?.rootView.makeToast(error.message, duration: 3.0, position: .bottom, title: error.title)
+                    return []
+                }
+            }
+            .debug("searchResults Bind")
             .bind(to: rootView.tableView.rx.items(cellIdentifier: ITunesSearchTableViewCell.identifier, cellType: ITunesSearchTableViewCell.self)) {
                 row, element, cell in
                 cell.configureCell(data: element)

@@ -19,11 +19,11 @@ final class ITunesSearchViewModel: BaseViewModel {
     }
     
     struct Output {
-        let searchResults: PublishSubject<[SoftwareResult]>
+        let searchResults: PublishSubject<Result<[SoftwareResult], APIError>>
     }
     
     func transform(input: Input) -> Output {
-        let searchResults = PublishSubject<[SoftwareResult]>()
+        let searchResults = PublishSubject<Result<[SoftwareResult], APIError>>()
         
         input.searchButtonClicked
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
@@ -31,15 +31,10 @@ final class ITunesSearchViewModel: BaseViewModel {
             .distinctUntilChanged()
             .map{ ITunesSearchQuery(term: $0) }
             .flatMap { NetworkManager.shared.callITunesSearch($0) }
-            .subscribe(with: self) { owner, results in
+            .debug("searchButtronClicked")
+            .bind(with: self, onNext: { owner, results in
                 searchResults.onNext(results)
-            } onError: { owner, error in
-                searchResults.onError(error)
-            } onCompleted: { _ in
-                print("completed")
-            } onDisposed: { _ in
-                print("disposed")
-            }
+            })
             .disposed(by: disposeBag)
     
         return Output(searchResults: searchResults)

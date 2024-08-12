@@ -10,6 +10,8 @@ import RxSwift
 
 final class NetworkManager {
     
+    typealias ITunesResult = Result<[SoftwareResult], APIError>
+    
     static let shared = NetworkManager()
     
     private init() { }
@@ -54,18 +56,26 @@ final class NetworkManager {
         return result
     }
     
-    func callITunesSearch(_ query: ITunesSearchQuery) -> Observable<[SoftwareResult]> {
+    func callITunesSearch(_ query: ITunesSearchQuery) -> Single<ITunesResult> {
         let router = APIRouter.search(query)
-        let results = Observable<[SoftwareResult]>.create { observer in
+//        let results = Observable<[SoftwareResult]>.create { observer in
+//            APIClient.request(ITunesSearchModel.self, router: router) { model in
+//                observer.onNext(model.results)
+//                observer.onCompleted()
+//            } failure: { error in
+//                observer.onError(error)
+//            }
+//            return Disposables.create()
+//        }
+        return Single.create { single in
             APIClient.request(ITunesSearchModel.self, router: router) { model in
-                observer.onNext(model.results)
-                observer.onCompleted()
+                single(.success(.success(model.results)))
             } failure: { error in
-                observer.onError(error)
+                single(.success(.failure(error)))
             }
             return Disposables.create()
         }
-        return results
+        .debug("callITunesSearch")
     }
     
 }
