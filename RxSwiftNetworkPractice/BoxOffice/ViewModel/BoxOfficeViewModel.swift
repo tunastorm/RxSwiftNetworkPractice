@@ -21,17 +21,14 @@ final class BoxOfficeViewModel: BaseViewModel {
     }
     
     struct Output {
-        let boxOfficeList: PublishSubject<[DailyBoxOffice]>
+        let boxOfficeList: Driver<Result<[DailyBoxOffice], BoxOfficeAPIError>>
         let recentList: BehaviorSubject<[String]>
-        let error: PublishSubject<Error>
     }
     
     func transform(input: Input) -> Output {
         
         let recentList = BehaviorSubject(value: recentList)
-        let boxOfficeList = PublishSubject<[DailyBoxOffice]>()
-        let errorResult = PublishSubject<Error>()
-        
+
         input.recentText
             .subscribe(with: self) { owner, value in
                 owner.recentList.append(value)
@@ -39,7 +36,7 @@ final class BoxOfficeViewModel: BaseViewModel {
             }
             .disposed(by: dispsoeBag)
         
-        input.searchButtonTap
+        let boxOfficeList = input.searchButtonTap
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
             .withLatestFrom(input.searchText)
             .debug("검색어 입력")
@@ -52,24 +49,15 @@ final class BoxOfficeViewModel: BaseViewModel {
             }
             .map { String($0) }
             .flatMap{ NetworkManager.shared.callBoxOffice(date: $0) }
-            .debug()
-            .subscribe(with: self) { owner, value in
-                boxOfficeList.onNext(value.boxOfficeResult.dailyBoxOfficeList)
-            } onError: { owner, error in
-                errorResult.onNext(error)
-            } onCompleted: { _ in
-                print("completed")
-            } onDisposed: { _ in
-                print("disposed")
-            }
-            .disposed(by: dispsoeBag)
+            .asDriver(onErrorJustReturn: .failure(.unexpectedError))
+            .debug("searchButtonTap")
 
         input.searchText
             .subscribe(with: self) { owner, value in
                 print("뷰모델 글자 인식")
             }.disposed(by: dispsoeBag)
         
-        return Output(boxOfficeList: boxOfficeList, recentList: recentList, error: errorResult)
+        return Output(boxOfficeList: boxOfficeList, recentList: recentList)
     }
     
 }

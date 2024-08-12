@@ -10,50 +10,47 @@ import RxSwift
 
 final class NetworkManager {
     
+    typealias MovieResult = Result<[DailyBoxOffice],BoxOfficeAPIError>
     typealias ITunesResult = Result<[SoftwareResult], APIError>
     
     static let shared = NetworkManager()
     
     private init() { }
     
-    func callBoxOffice(date: String) -> Observable<Movie> {
+    func callBoxOffice(date: String) -> Observable<MovieResult> {
         
         let boxOfficeKey = "f7364f38c83c60813feaa0f6ea071c0b"
         
         let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=" + boxOfficeKey + "&targetDt=" + date
         
-        let result = Observable<Movie>.create { observer in
+        return Observable<MovieResult>.create { observer in
             guard let url = URL(string: url) else {
-                observer.onError(BoxOfficeAPIError.invalidURL)
+                observer.onNext(.failure(.invalidURL))
                 return Disposables.create()
             }
             
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let error {
-                    observer.onError(BoxOfficeAPIError.unknownResponse)
+                    observer.onNext(.failure(.unknownResponse))
                     return
                 }
                 
                 guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                     dump(response)
-                    observer.onError(BoxOfficeAPIError.statusError)
+                    observer.onNext(.failure(.statusError))
                     return
                 }
                 
                 if let data, let appData = try? JSONDecoder().decode(Movie.self, from: data) {
-                    observer.onNext(appData)
-                    observer.onCompleted()
+                    observer.onNext(.success(appData.boxOfficeResult.dailyBoxOfficeList))
                 } else {
                     print("응답 성공, 디코딩 실패")
-                    observer.onError(BoxOfficeAPIError.unknownResponse)
+                    observer.onNext(.failure(.unknownResponse))
                 }
             }.resume()
             
             return Disposables.create()
         }.debug("박스오피스 조회")
-        
-        
-        return result
     }
     
     func callITunesSearch(_ query: ITunesSearchQuery) -> Single<ITunesResult> {

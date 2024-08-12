@@ -92,16 +92,23 @@ class BoxOfficeViewController: UIViewController {
             .disposed(by: disposeBag)
         
         output.boxOfficeList
-            .bind(to: tableView.rx.items(cellIdentifier: MovieTableViewCell.identifier, cellType: MovieTableViewCell.self)) {
+            .map{ [weak self] result in
+                switch result {
+                case.success(let boxOfficeList):
+                    if boxOfficeList.count == 0 {
+                        self?.view.makeToast(APIError.noResultError.message, duration: 3.0, position: .bottom, title: APIError.noResultError.title)
+                    }
+                    return boxOfficeList
+                case.failure(let error):
+                    self?.view.makeToast(error.message, duration: 3.0, position: .bottom, title: error.title)
+                    return []
+                }
+            }
+            .drive(tableView.rx.items(cellIdentifier: MovieTableViewCell.identifier, cellType: MovieTableViewCell.self)) {
                 row, element, cell in
                 cell.configureCell(data: element)
             }
             .disposed(by: disposeBag)
         
-        output.error
-            .bind(with: self) { owner, error in
-                owner.view.makeToast(error.localizedDescription, duration: 3.0, position: .bottom)
-            }
-            .disposed(by: disposeBag)
     }
 }

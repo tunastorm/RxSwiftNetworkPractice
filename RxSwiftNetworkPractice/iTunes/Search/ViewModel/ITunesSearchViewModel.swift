@@ -19,25 +19,21 @@ final class ITunesSearchViewModel: BaseViewModel {
     }
     
     struct Output {
-        let searchResults: PublishSubject<Result<[SoftwareResult], APIError>>
+        let searchResult: Driver<Result<[SoftwareResult], APIError>>
     }
     
     func transform(input: Input) -> Output {
-        let searchResults = PublishSubject<Result<[SoftwareResult], APIError>>()
         
-        input.searchButtonClicked
+        let searchResult = input.searchButtonClicked
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
             .withLatestFrom(input.searchKeyword)
             .distinctUntilChanged()
             .map{ ITunesSearchQuery(term: $0) }
             .flatMap { NetworkManager.shared.callITunesSearch($0) }
+            .asDriver(onErrorJustReturn: .failure(.unExpectedError))
             .debug("searchButtronClicked")
-            .bind(with: self, onNext: { owner, results in
-                searchResults.onNext(results)
-            })
-            .disposed(by: disposeBag)
     
-        return Output(searchResults: searchResults)
+        return Output(searchResult: searchResult)
     }
     
 }
